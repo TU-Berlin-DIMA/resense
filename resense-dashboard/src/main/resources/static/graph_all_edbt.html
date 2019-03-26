@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Resense | Record and Replay</title>
+
+    <script src="http://d3js.org/d3.v3.js"></script>
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="font-awesome/css/font-awesome.css" rel="stylesheet">
+
+    <link href="css/animate.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <div id="page-wrapper" class="gray-bg">
+    <div class="row border-bottom">
+    <nav class="navbar navbar-static-top" role="navigation" style="margin-bottom: 0">
+    <div class="navbar-header">
+        <a class="navbar-minimalize minimalize-styl-2 btn btn-primary " href="#"><i class="fa fa-bars"></i> </a>
+    </div>
+    </nav>
+    </div>
+    <div class="row wrapper border-bottom white-bg page-heading">
+        <div class="col-lg-11">
+            <h2><b>Resense Dashboard</b></h2>
+        </div>
+        <div class="col-lg-2">
+        </div>
+    </div>
+    <div class="col-lg-4">
+        <div class="ibox float-e-margins">
+            <div class="ibox-title">
+                <h5>Control panel</h5>
+                <div class="ibox-tools">
+                    <a class="collapse-link">
+                        <i class="fa fa-chevron-up"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="ibox-content">
+                <form class="form-horizontal">
+                    <div class="form-group row flex-v-center">
+                        <div class="col-xs-4">
+                            <select class="form-control m-b" name="experiment">
+                                <option>DEBS 2013</option>
+                                <option>DEBS 2012</option>
+                            </select>
+                        </div>
+                        <div class="col-xs-2">
+                            <p class="input-group">
+                                <span class="input-group-btn pull-right">
+                                    <button class="btn btn-sm m-t-n-xs" type="submit"><strong>Start</strong></button>
+                                    <button class="btn btn-sm m-t-n-xs" type="submit"><strong>Stop</strong></button>
+                                    <button class="btn btn-sm m-t-n-xs" type="submit"><strong>Replay</strong></button>       
+                                </span>
+                            </p>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="ibox float-e-margins">
+            <div class="ibox-title">
+                <h5>Recording Controls</h5>
+                <div class="ibox-tools">
+                    <a class="collapse-link">
+                        <i class="fa fa-chevron-up"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="ibox-content">
+                <form class="form-horizontal">
+                    <p>Start/stop the recording of a sensor and replay captured data.</p>
+                    <div class="form-group"><label class="col-lg-2 control-label"><u>Sensors:</u></label>
+                    </div>
+                </form>
+
+                <div class="form-group row flex-v-center">
+                    <div class="col-xs-3">
+                        <label for="from">Sensor #1</label>
+                    </div>
+                    <div class="col-xs-2">
+                        <p class="input-group">
+                            <span class="input-group-btn pull-right">
+                                <button class="btn btn-sm m-t-n-xs" type="submit"><strong>Record</strong></button>
+                                <button class="btn btn-sm m-t-n-xs" type="submit"><strong>Stop</strong></button>
+                                <button class="btn btn-sm m-t-n-xs" type="submit"><strong>Replay</strong></button>
+                            </span>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="form-group row flex-v-center">
+                    <div class="col-xs-3">
+                        <label for="from">Sensor #2</label>
+                    </div>
+                    <div class="col-xs-2">
+                        <p class="input-group">
+                            <span class="input-group-btn pull-right">
+                                <button class="btn btn-sm m-t-n-xs" type="submit"><strong>Record</strong></button>
+                                <button class="btn btn-sm m-t-n-xs" type="submit"><strong>Stop</strong></button>
+                                <button class="btn btn-sm m-t-n-xs" type="submit"><strong>Replay</strong></button>
+                            </span>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="form-group row flex-v-center">
+                    <div class="col-xs-3">
+                        <label for="from">Sensor #3</label>
+                    </div>
+                    <div class="col-xs-2">
+                        <p class="input-group">
+                            <span class="input-group-btn pull-right">
+                                <button class="btn btn-sm m-t-n-xs" type="submit"><strong>Record</strong></button>
+                                <button class="btn btn-sm m-t-n-xs" type="submit"><strong>Stop</strong></button>
+                                <button class="btn btn-sm m-t-n-xs" type="submit"><strong>Replay</strong></button>
+                            </span>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="form-group row flex-v-center">
+                    <div class="col-xs-3">
+                        <label for="from">Sensor #4</label>
+                    </div>
+                    <div class="col-xs-2">
+                        <p class="input-group">
+                            <span class="input-group-btn pull-right">
+                                <button class="btn btn-sm m-t-n-xs" type="submit"><strong>Record</strong></button>
+                                <button class="btn btn-sm m-t-n-xs" type="submit"><strong>Stop</strong></button>
+                                <button class="btn btn-sm m-t-n-xs" type="submit"><strong>Replay</strong></button>
+                            </span>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="form-group row flex-v-center">
+                    <div class="col-xs-2 col-xs-offset-3">
+                        <p class="input-group">
+                            <span class="input-group-btn">
+                                <button type="button" class="btn btn-white"><i class="fa fa-chevron-left"></i></button>
+                                <button class="btn btn-white active">1</button>
+                                <button class="btn btn-white">2</button>
+                                <button class="btn btn-white">3</button>
+                                <button class="btn btn-white">4</button>
+                                <button type="button" class="btn btn-white"><i class="fa fa-chevron-right"></i> </button>
+                            </span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-lg-4">
+        <div class="ibox float-e-margins">
+            <div class="ibox-title">
+                <h5>Monitoring</h5>
+                <div class="ibox-tools">
+                    <a class="collapse-link">
+                        <i class="fa fa-chevron-up"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="ibox-content">
+                <form class="form-horizontal">
+                    <p>Live monitoring of running replays and various sensors.</p>
+                    <div class="form-group"><label class="col-lg-2 control-label"><u>Current:</u></label>
+                    </div>
+                    <div>
+                        <ul>
+                            <li>
+                                Debs 2013
+                            </li>
+                            <li>
+                                Debs 2012
+                            </li>
+                            <li>
+                                Record session
+                            </li>
+                        </ul>
+                    </div>
+                </form>
+                <form class="form-horizontal">
+                    <div class="form-group"><label class="col-lg-2 control-label"><u>Nodes:</u></label>
+                    </div>
+                    <div class="d-flex justify-content-center">
+                        <div>
+                            <label>Raspberry Pi #1</label>
+                            <ul>
+                                <li>
+                                    Sensor #1 | Experiment: DEBS 2013 | ID: mf01 | Type: Integer
+                                </li>
+                            </ul>
+                        </div>
+                        <div>
+                            <label>Raspberry Pi #2</label>
+                            <ul>
+                                <li>
+                                    Sensor #2 | Experiment: DEBS 2013 | ID: mf02 | Type: Integer
+                                </li>
+                            </ul>
+                        </div>
+                        <div>
+                            <label>Laptop #1</label>
+                            <ul>
+                                <li>
+                                    Sensor #3 | Experiment: DEBS 2012 | ID: dr01 | Type: Float
+                                </li>
+                                <li>
+                                    Sensor #4 | Experiment: DEBS 2012 | ID: dr02 | Type: Float
+                                </li>
+                                <li>
+                                    Sensor #9 | Experiment: DEBS 2013 | ID: mf03 | Type: Integer
+                                </li>
+                            </ul>
+                        </div>
+                        <div>
+                            <label>Physical</label>
+                            <ul>
+                                <li>
+                                    Sensor #5 | Experiment: Recording...
+                                </li>
+                                <li>
+                                    Sensor #6 | Experiment: None
+                                </li>
+                                <li>
+                                    Sensor #7 | Experiment: None
+                                </li>
+                                <li>
+                                    Sensor #8 | Experiment: Recording...
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </form>
+                <form class="form-horizontal">
+                    <div class="form-group"><label class="col-lg-2 control-label"><u>Time:</u></label>
+                    </div>
+                    <div>
+                        <ul>
+                            <li>
+                                DEBS 2012 | 1m:32s | 87%
+                            </li>
+                            <li>
+                                DEBS 2013 | 0m:25s | 42%
+                            </li>
+                            <li>
+                                Record session | 0m:14s
+                            </li>
+                        </ul>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-4">
+        <div class="ibox float-e-margins">
+            <div class="ibox-title">
+                <h5>Current readings | DEBS 2013:</h5>
+                <div class="ibox-tools">
+                    <a class="collapse-link">
+                        <i class="fa fa-chevron-up"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="ibox-content">
+                <div class="flot-chart">
+                    <div class="flot-chart-content" id="flot-line-chart-moving"></div>
+                </div>
+            </div>
+        </div>
+        <div class="ibox float-e-margins">
+            <div class="ibox-title">
+                <h5>Current readings | DEBS 2012:</h5>
+                <div class="ibox-tools">
+                    <a class="collapse-link">
+                        <i class="fa fa-chevron-up"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="ibox-content">
+                <div class="flot-chart">
+                    <div class="flot-chart-content" id="flot-line-chart-moving-2"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mainly scripts -->
+    <script src="js/jquery-3.1.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/plugins/metisMenu/jquery.metisMenu.js"></script>
+    <script src="js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+
+    <!-- Flot -->
+    <script src="js/plugins/flot/jquery.flot.js"></script>
+    <script src="js/plugins/flot/jquery.flot.tooltip.min.js"></script>
+    <script src="js/plugins/flot/jquery.flot.resize.js"></script>
+    <script src="js/plugins/flot/jquery.flot.pie.js"></script>
+    <script src="js/plugins/flot/jquery.flot.time.js"></script>
+
+    <!-- Custom and plugin javascript -->
+    <script src="js/inspinia.js"></script>
+    <script src="js/plugins/pace/pace.min.js"></script>
+
+    <!-- Flot demo data -->
+    <script src="js/demo/flot-demo-edbt.js"></script>
+
+</body>
+
+</html>
